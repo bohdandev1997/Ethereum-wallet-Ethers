@@ -44,7 +44,3 @@ A simple Ethereum wallet using Ethers.js
 
 - React Native
 - Ethers
-
-# react-native performance and randombytes
-
-https://github.com/ethers-io/ethers.js/issues/1503
