@@ -1,0 +1,93 @@
+{
+  "name": "boneWallet",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "check-types": "tsc --pretty --noEmit",
+    "test-all": "yarn check-types && yarn test",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write src/**/*.{ts,tsx}",
+    "bundle-visualize": "./node_modules/.bin/react-native-bundle-visualizer",
+    "ios:clean": "cd ios && rm -fr Pods Podfile.lock && pod install && cd ..",
+    "ios:pod": "cd ios && pod install && cd ..",
+    "android:clean": "cd android && ./gradlew clean && cd ..",
+    "android:build": "cd android && ./gradlew bundleRelease && cd ..",
+    "android:releaseTest": "react-native run-android --variant=release",
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook -o ./build/site",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@ethersproject/shims": "^5.5.0",
+    "@gorhom/bottom-sheet": "^4",
+    "@react-native-async-storage/async-storage": "^1.15.11",
+    "@react-native-clipboard/clipboard": "^1.9.0",
+    "@react-navigation/bottom-tabs": "^6.0.9",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
+    "ethers": "^5.5.1",
+    "react": "17.0.2",
+    "react-hook-form": "^7.20.2",
+    "react-native": "0.66.3",
+    "react-native-config": "^1.4.5",
+    "react-native-encrypted-storage": "^4.0.2",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-get-random-values": "^1.7.1",
+    "react-native-modal": "^13.0.0",
+    "react-native-qrcode-svg": "^6.1.1",
+    "react-native-reanimated": "2.2.4",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.9.0",
+    "react-native-svg": "^12.1.1",
+    "recoil": "^0.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@storybook/addon-actions": "^6.3.9",
+    "@storybook/addon-essentials": "^6.3.9",
+    "@storybook/addon-viewport": "^6.3.9",
+    "@storybook/react": "^6.3.9",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/jest": "^27.0.3",
+    "@types/react-native": "^0.66.5",
+    "@types/react-test-renderer": "^17.0.1",
+    "@welldone-software/why-did-you-render": "^6.2.3",
+    "babel-jest": "^27.3.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^7.32.0",
+    "husky": "^6.0.0",
+    "jest": "^27.3.1",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "^2.4.1",
+    "react-dom": "17.0.2",
+    "react-native-bundle-visualizer": "^3.1.0",
+    "react-native-web": "^0.17.5",
+    "react-test-renderer": "17.0.2",
+    "typescript": "4.4.4"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "setupFiles": [
+      "./jest/jest.setup.js",
+      "./node_modules/react-native-gesture-handler/jestSetup.js"
+    ]
+  },
+  "packageManager": "yarn@3.0.0"
+}
